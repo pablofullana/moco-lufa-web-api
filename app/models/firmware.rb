@@ -32,9 +32,9 @@ class Firmware < ApplicationRecord
   def generate_hex_file
     firmware_path = File.join(Rails.root, 'tmp', 'firmwares', SecureRandom.uuid)
     FileUtils.mkdir_p firmware_path
-    FileUtils.cp_r File.join(Rails.root, 'lib', 'assets', 'lufa_100807'), firmware_path
+    FileUtils.cp_r File.join(Rails.root, 'lib', 'assets', 'LUFA-100807'), firmware_path
 
-    project_directory_path = File.join(firmware_path, 'lufa_100807', 'Projects', 'mocolufa-master')
+    project_directory_path = File.join(firmware_path, 'LUFA-100807', 'Projects', 'mocolufa-master')
 
     # Descriptors
     descriptors_file_path = File.join(project_directory_path, 'Descriptors.c')
@@ -57,6 +57,7 @@ class Firmware < ApplicationRecord
     # return File.read make_file_path
   rescue
     errors.add(:compilation, 'Generic compilation error')
+    return false
   ensure
     # Cleanup
     FileUtils.rm_rf firmware_path
