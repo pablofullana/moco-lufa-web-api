@@ -1,0 +1,10 @@
+flex
+byacc
+bison
+gcc
+libusb
+libusb-dev
+binutils-avr
+gcc-avr
+avr-libc
+avrdude
