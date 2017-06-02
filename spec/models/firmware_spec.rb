@@ -28,4 +28,28 @@ RSpec.describe Firmware, type: :model do
       end
     end
   end
+
+  describe '#arduino_model_pid' do
+    let(:subject) { described_class.new }
+
+    context 'when arduino_model is uno' do
+      before do
+        subject.arduino_model = :uno
+      end
+
+      it 'returns 0x0001' do
+        expect(subject.arduino_model_pid).to eq '0x0001'
+      end
+    end
+
+    context 'when arduino_model is mega' do
+      before do
+        subject.arduino_model = :mega
+      end
+
+      it 'returns 0x0010' do
+        expect(subject.arduino_model_pid).to eq '0x0010'
+      end
+    end
+  end
 end

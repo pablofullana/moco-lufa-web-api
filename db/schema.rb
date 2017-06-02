@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20170601222141) do
   create_table "firmwares", force: :cascade do |t|
     t.string "name"
     t.string "manufacturer"
-    t.integer "arduino_model", default: 0
+    t.string "arduino_model"
     t.integer "compilation_result", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

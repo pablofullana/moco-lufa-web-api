@@ -3,7 +3,7 @@ class CreateFirmwares < ActiveRecord::Migration[5.1]
     create_table :firmwares do |t|
       t.string :name
       t.string :manufacturer
-      t.integer :arduino_model, default: 0
+      t.string :arduino_model
       t.integer :compilation_result, default: 0
 
       t.timestamps
