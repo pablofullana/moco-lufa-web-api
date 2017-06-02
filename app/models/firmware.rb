@@ -56,7 +56,7 @@ class Firmware < ApplicationRecord
     return File.read File.join(project_directory_path, 'arduino_midi.hex')
     # return File.read make_file_path
   rescue
-    errors.add(:base, 'compilation error')
+    errors.add(:compilation, 'Generic compilation error')
   ensure
     # Cleanup
     FileUtils.rm_rf firmware_path
