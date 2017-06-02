@@ -3,6 +3,7 @@ byacc
 bison
 gcc
 libmpc3
+libmpfr4
 libusb
 libusb-dev
 binutils-avr
