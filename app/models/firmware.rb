@@ -32,7 +32,7 @@ class Firmware < ApplicationRecord
   def generate_hex_file
     firmware_path = File.join(Rails.root, 'tmp', 'firmwares', SecureRandom.uuid)
     FileUtils.mkdir_p firmware_path
-    FileUtils.cp_r File.join(Rails.root, 'lib', 'assets', 'LUFA-100807'), firmware_path
+    FileUtils.cp_r File.join(Rails.root, 'lib', 'LUFA-100807'), firmware_path
 
     project_directory_path = File.join(firmware_path, 'LUFA-100807', 'Projects', 'mocolufa-master')
 
@@ -53,7 +53,7 @@ class Firmware < ApplicationRecord
 
     # Make
     system "make -C #{project_directory_path}"
-    return File.read File.join(project_directory_path, 'arduino_midi.hex')
+    return File.read File.join(project_directory_path, 'dualMoco.hex')
     # return File.read make_file_path
   rescue
     errors.add(:compilation, 'Generic compilation error')
