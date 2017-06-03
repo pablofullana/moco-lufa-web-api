@@ -7,6 +7,6 @@ libmpfr4
 libusb
 libusb-dev
 binutils-avr
-gcc-avr
 avr-libc
+gcc-avr
 avrdude
