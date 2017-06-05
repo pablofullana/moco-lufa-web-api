@@ -1,7 +1,7 @@
 module StaticHelper
   def application_server_setup
     {
-      'gcc': `gcc --version`.split("\n").first,
+      # 'gcc': `gcc --version`.split("\n").first,
       'avr-gcc': `avr-gcc --version`.split("\n").first,
       'avrdude': ENV['AVRDUDE_VERSION'],
       'LUFA': ENV['LUFA_VERSION'],

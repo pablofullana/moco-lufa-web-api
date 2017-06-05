@@ -2,7 +2,6 @@ flex
 byacc
 bison
 gcc
-g++
 libmpc3
 libmpfr4
 libusb
