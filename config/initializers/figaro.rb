@@ -1,0 +1,5 @@
+Figaro.require_keys(
+  "AVRDUDE_VERSION",
+  "LUFA_VERSION",
+  "DUALMOCOLUFA_VERSION"
+)

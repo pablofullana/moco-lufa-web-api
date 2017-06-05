@@ -17,6 +17,10 @@
 !/log/.keep
 !/tmp/.keep
 
+DS_Store
 .byebug_history
 config/database.yml
 .ruby-version
+
+# Ignore application configuration
+/config/application.yml
