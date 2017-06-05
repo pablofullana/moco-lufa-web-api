@@ -1,5 +1,5 @@
 # Add configuration values here, as shown below.
-#
-# avrdude_version: "Version 6.3, compiled on Mar 15 2016 at 21:26:45"
-# LUFA_version: "100807"
-# dualMocoLUFA_version: "2013/09/22"
+
+AVRDUDE_VERSION: "Version 6.3, compiled on Mar 15 2016 at 21:26:45"
+LUFA_VERSION: "100807"
+DUALMOCOLUFA_VERSION: "2013/09/22"
