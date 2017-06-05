@@ -1,12 +1,12 @@
 flex
 byacc
 bison
-gcc
 libmpc3
 libmpfr4
 libusb
 libusb-dev
 binutils-avr
+gcc
 avr-libc
 gcc-avr
 avrdude
