@@ -1,6 +1,10 @@
 module Api
   module V1
     class FirmwaresController < ApplicationController
+      def index
+        render json: Firmware.all.order(created_at: :desc), status: :ok
+      end
+
       def create
         firmware = Firmware.new firmware_params
         if firmware.save

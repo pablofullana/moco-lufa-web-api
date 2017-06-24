@@ -5,7 +5,7 @@
 #  id                 :integer          not null, primary key
 #  name               :string
 #  manufacturer       :string
-#  arduino_model      :integer          default("0")
+#  arduino_model      :string
 #  compilation_result :integer          default("0")
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
