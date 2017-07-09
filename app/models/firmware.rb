@@ -16,7 +16,7 @@ class Firmware < ApplicationRecord
 
   validates_inclusion_of :arduino_model, in: %w(uno mega)
 
-  enum compilation_result: [:pending, :succeed, :failed]
+  enum compilation_result: [:pending, :succeeded, :failed]
 
   def arduino_model_pid
     case arduino_model
@@ -54,7 +54,7 @@ class Firmware < ApplicationRecord
     # Make
     system "make -C #{project_directory_path}"
     content = File.read File.join(project_directory_path, 'dualMoco.hex')
-    update(compilation_result: 'succeed') if content
+    update(compilation_result: 'succeeded') if content
     return content
   rescue
     update(compilation_result: 'failed')
