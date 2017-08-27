@@ -12,10 +12,16 @@ module Api
           if hex_file
             send_data hex_file, filename: "output.hex", type: :text
           else
-            render json: { errors: firmware.errors }, status: :unprocessable_entity
+            render json: {
+              errors: firmware.errors,
+              errors_sentence: firmware.errors.full_messages.to_sentence
+            }, status: :unprocessable_entity
           end
         else
-          render json: { errors: firmware.errors }, status: :unprocessable_entity
+          render json: {
+            errors: firmware.errors,
+            errors_sentence: firmware.errors.full_messages.to_sentence
+          }, status: :unprocessable_entity
         end
       end
 
