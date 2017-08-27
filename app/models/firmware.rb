@@ -9,12 +9,15 @@
 #  compilation_result :integer          default("0")
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
+#  pid                :string
 #
 
 class Firmware < ApplicationRecord
-  validates_presence_of :name, :manufacturer, :arduino_model, :compilation_result
-
+  validates_presence_of :name, :manufacturer, :arduino_model, :compilation_result, :pid
   validates_inclusion_of :arduino_model, in: %w(uno mega)
+  validates_format_of :pid,
+    with: /\A0x(1|2|3|4|5|6|7|8|9|a|b|c|d|e|f)(0|1|2|3|4|5|6|7|8|9|a|b|c|d|e|f){3}\z/i,
+    message: :invalid_format
 
   enum compilation_result: [:pending, :succeeded, :failed]
 
@@ -43,6 +46,7 @@ class Firmware < ApplicationRecord
     new_content = new_content.gsub(/{{MANUFACTURER_STRING_LENGTH}}/, manufacturer.length.to_s)
     new_content = new_content.gsub(/{{PRODUCT_STRING}}/, name)
     new_content = new_content.gsub(/{{PRODUCT_STRING_LENGTH}}/, name.length.to_s)
+    new_content = new_content.gsub(/{{PRODUCT_ID}}/, pid)
     File.open(descriptors_file_path, "w") { |file| file.puts new_content }
 
     # Makefile

@@ -102,7 +102,7 @@ const USB_Descriptor_Device_t PROGMEM DeviceDescriptorMIDI =
 	.Endpoint0Size          = FIXED_CONTROL_ENDPOINT_SIZE,
 
 	.VendorID               = 0x03EB, // Atmel
-	.ProductID              = 0x2048, // LUFA USB-MIDI Demo application
+	.ProductID              = {{PRODUCT_ID}}, // Product ID
 	.ReleaseNumber          = 0x0000,
 
 	.ManufacturerStrIndex   = 0x01,

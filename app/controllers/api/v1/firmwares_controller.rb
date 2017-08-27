@@ -21,7 +21,7 @@ module Api
 
       private
       def firmware_params
-        params.require(:firmware).permit(:name, :manufacturer, :arduino_model)
+        params.require(:firmware).permit(:name, :manufacturer, :arduino_model, :pid)
       end
     end
   end
