@@ -36,4 +36,4 @@ en:
         firmware:
           attributes:
             pid:
-              invalid_format: 'Must be an hexa number between 0x1000 and 0xffff'
+              invalid_format: 'Must be an hex number between 0x1000 and 0xffff'
