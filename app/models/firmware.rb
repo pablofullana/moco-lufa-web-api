@@ -16,6 +16,7 @@ class Firmware < ApplicationRecord
   validates_presence_of :name, :manufacturer, :arduino_model, :compilation_result, :pid
   validates_inclusion_of :arduino_model, in: %w(uno mega)
   validates_format_of :pid,
+    # validates 0x1000 <= pid <= 0xffff
     with: /\A0x(1|2|3|4|5|6|7|8|9|a|b|c|d|e|f)(0|1|2|3|4|5|6|7|8|9|a|b|c|d|e|f){3}\z/i,
     message: :invalid_format
 
